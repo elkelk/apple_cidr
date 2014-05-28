@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['DATABASE_NAME'] || "apple_cidr_development" %>
+  username: <%= ENV['DATABASE_USERNAME'] || "apple_cidr_user" %>
+  password: <%= ENV['DATABASE_PASSWORD'] || "" %>
+  pool: 5
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: apple_cidr_test
+  username: <%= ENV['DATABASE_USERNAME'] || "apple_cidr_user" %>
+  password: <%= ENV['DATABASE_PASSWORD'] || "" %>
+  pool: 5
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: apple_cidr
+  username: <%= ENV['DATABASE_USERNAME'] || "apple_cidr_user" %>
+  password: <%= ENV['DATABASE_PASSWORD'] || "" %>
+  pool: 5
