@@ -13,13 +13,16 @@ gem 'uglifier', '>= 1.3.0'
 group :development do
   gem 'awesome_print'
   gem 'better_errors'
-  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rspec'
 end
 
 group :test do
+  gem 'database_cleaner'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'shoulda-matchers'
 end
 
+gem 'dotenv-rails', :groups => [:development, :test]
