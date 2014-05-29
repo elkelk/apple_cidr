@@ -4,6 +4,7 @@ AppleCidr::Application.routes.draw do
    resources :addresses do
      collection do
        get 'lookup'
+       get 'whitelisted'
      end
    end
 end

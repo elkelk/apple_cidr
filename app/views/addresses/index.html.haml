@@ -1,0 +1,9 @@
+%h1 Active CIDRs
+%ul
+- @addresses.each do |address|
+  %li
+    = address.cidr
+    = link_to "Edit", edit_address_path(address)
+    = button_to "Delete", address_path(address), method: "delete"
+= link_to "Add Address", new_address_path
+= link_to "Lookup IP", lookup_addresses_path
