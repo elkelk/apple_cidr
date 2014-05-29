@@ -4,8 +4,10 @@ $ ->
       @bind_lookup_button()
 
     bind_lookup_button: ->
-      $("#lookup").click =>
+      $("#lookup").submit =>
+        $(".js-status").addClass("hidden")
         @lookup_ip_address()
+        false
 
     lookup_ip_address: ->
       data = { ip_address: $("#ip_lookup").val() }
@@ -16,7 +18,7 @@ $ ->
         contentType: "json"
         success: (data) =>
           if data.whitelisted
-            $(".js-status").html("The addres IS whitelisted")
+            $(".js-status.text-success").removeClass("hidden")
           else
-            $(".js-status").html("The addres IS NOT whitelisted")
+            $(".js-status.text-danger").removeClass("hidden")
   new Lookup()

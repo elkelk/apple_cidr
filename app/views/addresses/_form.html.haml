@@ -1,0 +1,5 @@
+= form_for @address do |f|
+  = f.text_field :cidr
+  = f.submit "Save", class: "btn btn-default btn-sm"
+  = link_to "Cancel", addresses_path, class: "btn btn-default btn-sm"
+= link_to "Or Lookup IP", lookup_addresses_path

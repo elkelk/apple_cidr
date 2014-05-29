@@ -1,7 +1,12 @@
 %h1 Check if IP Address is in whitelist
 %div{ id: "js-lookup-url", data: { url: whitelisted_addresses_path } }
-  = text_field_tag :ip_lookup
-  = button_tag :Lookup, id: "lookup"
-%div.js-status
+  = form_tag "#", id: "lookup" do
+    = text_field_tag :ip_lookup
+    = button_tag :lookup, class: "btn btn-default btn-sm"
+%p.js-status.text-success.hidden
+  The Address IS Whitelisted
+%p.js-status.text-danger.hidden
+  The Address IS NOT Whitelisted
 = link_to "Add Address", new_address_path
+&nbsp;|&nbsp;
 = link_to "Address List", addresses_path
