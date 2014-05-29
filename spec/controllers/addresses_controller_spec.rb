@@ -78,7 +78,7 @@ describe AddressesController do
   end
 
   describe "PATCH update" do
-    it "creates a new mentor application" do
+    it "creates a new address" do
       patch :update, id: address.id, address: valid_params
       expect(address.reload.cidr).to eq valid_params[:cidr]
     end
